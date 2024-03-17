@@ -25,7 +25,7 @@ import com.google.gson.reflect.TypeToken;
  * It interacts with the Chat Engine API to authenticate users and create new user accounts.
  * This class uses Spring's {@code @RestController} annotation to make it a controller
  * handled by Spring MVC. The {@code @RequestMapping} annotations are used to map web requests
- * to the respective method.
+ * to the respective methods.
  */
 @RestController
 public class UserController {
