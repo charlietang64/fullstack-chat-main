@@ -1,0 +1,39 @@
+/* Assuming you have a global stylesheet, add these styles there */
+.community-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1a1a1a; /* Match the dark theme */
+    color: #ffffff; /* For texts */
+}
+
+/* ChatEngineWrapper component */
+.ce-chat-engine-wrapper {
+    flex-grow: 1; /* Take up available space */
+}
+
+/* Chat Feed */
+.ce-chat-feed {
+    background-color: #1a1a1a; /* Dark background */
+}
+
+/* Chat bubble */
+.ce-message-bubble {
+    background-color: #333; /* Slightly lighter for visibility */
+    color: #fff; /* White text */
+    margin: 8px; /* Spacing around messages */
+    padding: 12px; /* Padding inside messages */
+    border-radius: 16px; /* Rounded corners */
+}
+
+/* Input area */
+.ce-input {
+    background-color: #262626; /* Dark background for input area */
+    color: #fff; /* White text */
+}
+
+/* Send button */
+.ce-send-button {
+    background-color: #0b93f6; /* Bright color for send button */
+    color: #fff; /* White text */
+}
