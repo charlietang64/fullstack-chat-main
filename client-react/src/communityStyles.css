@@ -1,0 +1,25 @@
+.community-page .anticon-house {
+    position: relative;
+    top: -25px;
+    left: 1%;
+  }
+
+  
+.community-page .anticon-house svg {
+    position: absolute;
+    top: 31px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 10;
+    width: 30px; 
+    height: 30px;
+    fill: rgb(24, 144, 255);
+  }
+
+.community-page .anticon-house:hover svg {
+    opacity: 0.66;
+  }
+
+.ql-editor {
+    white-space: inherit !important;
+  }
