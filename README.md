@@ -1,7 +1,5 @@
-# Fullstack Chat project
+# Fullstack Chat App
 
-This project allows to setup fullstack chat for any frontend/backend combination!
+A chat app allowing for students of Green River College's Student Housing to chat with eachother using group chats or a community chat.
 
-Connect React, Vue, or Angular and any backend you wish!
-
-This should fully support all your fullstack chat needs!
+Created using React for the front-end and Spring for the back-end
