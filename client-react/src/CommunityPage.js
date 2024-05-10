@@ -1,6 +1,7 @@
-import React from 'react';
-import './chatstyles.css';
+import React, { useState }  from 'react';
+import './communityStyles.css';
 import { ChatEngineWrapper, ChatSocket, ChatFeed } from 'react-chat-engine'
+import Chats from "./chat";
 
 /**
  * The `CommunityPage` components serves as a container for rendering a specific chat room
@@ -22,23 +23,50 @@ import { ChatEngineWrapper, ChatSocket, ChatFeed } from 'react-chat-engine'
  * your Chat Engine project to properly connect and interact with your chat instance.
  */
 const CommunityPage = (props) => {
-    return (
-        <div style={{ height: '100vh', width: '100vw', color: '#fff' }}>
-            <ChatEngineWrapper>
-                <ChatSocket
-                    projectID='4128f052-a8b8-46be-8304-55cd3f68a578'
-                    chatID='237733'
-                    chatAccessKey='ca-264b4109-a70d-4e25-8f4b-0a1aabc70eb7'
-                    senderUsername={props.user.username}
-                />
-                <ChatFeed activeChat='237733' /> 
-            </ChatEngineWrapper>
+    const [showChats, setShowChats] = useState(false); // State to control the display of ChatsPage
+  
+    const handleIconClick = () => {
+      setShowChats(true); // Update the state to show ChatsPage
+    };
+  
+    if (showChats) {
+      return <Chats user={props.user} />; // Render ChatsPage if showChats is true
+    }
+return (
+    <div class='community-page'>
 
-            <style>{`
-                
-            `}</style>
-        </div>
-    );
-};
+        <span
+          role="img"
+          aria-label="house"
+          className="anticon anticon-house ce-custom-header-icon"
+          onClick={handleIconClick}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            focusable="false"
+            data-icon="house"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 11 21 L 11 15 L 13 15 L 13 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z M 12 4.7910156 L 18 10.191406 L 18 11 L 18 19 L 15 19 L 15 13 L 9 13 L 9 19 L 6 19 L 6 10.191406 L 12 4.7910156 z" />
+          </svg>
+        </span>
+    <ChatEngineWrapper>
+        <ChatSocket
+            offset={-7}
+            projectID='8242613e-ac4c-402a-b119-71bc424d4390'
+            chatID='248933'
+            chatAccessKey='ca-a9cf5b6a-3ff6-40b3-bc84-6287c5ee1866'
+            senderUsername={props.user.username}
+        />
+
+        <ChatFeed activeChat='248933' /> 
+    </ChatEngineWrapper>
+    </div>
+)
+}
 
 export default CommunityPage;

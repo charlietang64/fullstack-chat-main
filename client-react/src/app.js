@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import AuthPage from "./authPage";
-import ChatsPage from "./chatsPage";
+import Chats from "./chat"
+import UserList from "./userList";
+import Login from "./login";
 
 /**
  * The App component serves as the main entry point of the application.
@@ -14,13 +15,22 @@ function App() {
   // State to keep track of the user's authentication status
   const [user, setUser] = useState();
 
+  // Function to handle authentication
+  const handleAuth = (userData) => {
+    setUser(userData);
+  };
+
   // Conditional rendering based on the user's authentication status
   if (!user) {
     // If no user is authenticated, render the authentication page
-    return <AuthPage onAuth={(user) => setUser(user)} />;
-  } else {
+    return <Login onAuth={handleAuth} />;
+  }
+  else if(user.username === "admin") {
+    return <UserList />
+  }
+  else {
     // If a user is authenticated, render the chat page
-    return <ChatsPage user={user} />;
+    return <Chats user={user} />;
   }
 }
 

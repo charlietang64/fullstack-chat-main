@@ -25,7 +25,7 @@ const AuthPage = (props) => {
   const [first_name, setFirstName] = useState();
   const [last_name, setLastName] = useState();
 
-    /**
+  /**
    * Handles the login form submission.
    * Performs a POST request with the username and secret (password) to the login endpoint.
    * Upon successful response, calls the `onAuth` prop with the response data.
@@ -35,7 +35,7 @@ const AuthPage = (props) => {
   const onLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", { username, secret })
+      .post(`http://192.168.68.127:3001/login`, { username, secret })
       .then((r) => props.onAuth({ ...r.data, secret })) // NOTE: over-ride secret
       .catch((e) => console.log(JSON.stringify(e.response.data)));
   };
@@ -50,7 +50,7 @@ const AuthPage = (props) => {
   const onSignup = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/signup", {
+      .post("http://192.168.68.127:3001/signup", {
         username,
         secret,
         email,
